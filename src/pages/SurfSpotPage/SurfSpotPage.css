@@ -1,0 +1,21 @@
+.destination-form {
+    display: flex;
+    border-radius: 1em;
+    box-sizing: border-box;
+    justify-content: center;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.destination-form textarea {
+    padding: 3%;
+    border: .1em solid #ccc;
+    border-radius: 2%;
+    margin-bottom: 2%;
+    width: 30vw;
+    height: 15vh;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: .9em;
+}
+
