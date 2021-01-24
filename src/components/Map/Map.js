@@ -1,3 +1,4 @@
+/*
 import { useRef } from 'react';
 import styles from './Map.module.css';
 import mapStyle from './map-style';
@@ -31,3 +32,5 @@ function Map(props) {
 }
 
 export default Map;
+
+*/

@@ -9,7 +9,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import LoginPage from '../../pages/LoginPage/LoginPage';
 import SignupForm from '../SignupForm/SignupForm'; 
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -73,29 +72,13 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
 }
 
 export const LoginNav = () => {
-   
-    const drawerWidth = 240;
-    
+       
     const useStyles = makeStyles((theme) => ({
       root: {
         display: 'flex',
       },
       appBar: {
         zIndex: theme.zIndex.drawer + 1,
-      },
-      drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-      },
-      drawerPaper: {
-        width: drawerWidth,
-      },
-      drawerContainer: {
-        overflow: 'auto',
-      },
-      content: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
       },
     }));
     
@@ -108,30 +91,10 @@ export const LoginNav = () => {
           <AppBar position="fixed" className={classes.appBar}>
             <Toolbar>
               <Typography variant="h6" noWrap>
-                Clipped drawer
+                Surf Break
               </Typography>
             </Toolbar>
           </AppBar>
-          <Drawer
-            className={classes.drawer}
-            variant="permanent"
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-          >
-            <Toolbar />
-            <div className={classes.drawerContainer}>
-              <List>
-                {['Alaska', 'California', 'Oregon', 'Washington','Texas','Florida','North Carolina','Virginia','New Jersey','New York','Rhode Island','New Hampshire','Maine'].map((text, index) => (
-                  <ListItem button key={text}>
-                   
-                    <ListItemText primary={text} />
-                  </ListItem>
-                ))}
-              </List>
-             
-            </div>
-          </Drawer>
         </div>
       );
     }
