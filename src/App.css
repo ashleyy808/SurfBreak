@@ -1,11 +1,16 @@
 .App {
   text-align: flex;
+  font-size: large;
+  
 }
 
 .App main {
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  display: flex;
   
 }
+
+
 
 
 

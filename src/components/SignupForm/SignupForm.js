@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import logo from '../../img/tyler-nix-9kY6iayVGIk-unsplash.jpg';
+import './SignupForm.module.css';
+
 
 const SignupForm =({handleRegister,handleChange}) => {
 
     return (
       <div>
-        <header className="header-footer">Sign Up</header>
+        <header className="header-footer">Have a Surf Break</header>
+        <img id="container" src={logo} width="200" height="200"/>
         <form className="form-horizontal" onSubmit={handleRegister} >
           <div className="form-group">
             <div className="col-sm-12">
@@ -29,7 +31,7 @@ const SignupForm =({handleRegister,handleChange}) => {
             </div>
           </div>
           <Button type='submit' color="primary">
-            Register
+            Submit
           </Button>
         </form>
       </div>

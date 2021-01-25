@@ -31,8 +31,13 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
     },
     title:{
       flexGrow: 1
-    }
+    },
+    margin: {
+      margin: theme.spacing(2),
+    },
   }));
+
+  
   
     const classes = useStyles();
      const [open, setOpen] = React.useState(false);
@@ -50,11 +55,11 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
     <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <Typography variant="h6" noWrap className={classes.title}>
+          <Typography variant="h2" noWrap className={classes.title}>
             Surf Break
           </Typography>
 
-      <Button variant="contained" onClick={handleClickOpen}>
+      <Button variant="contained" size="large" onClick={handleClickOpen}>
         Login 
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -63,15 +68,15 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
          <LoginPage handleChange={handleLoginChange} handleLogin={handleLogin}/>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          {/* <Button onClick={handleClose} color="primary">
             Cancel
-          </Button>
+          </Button> */}
           <Button type='submit' color="secondary">
             Login
           </Button>
         </DialogActions>
       </Dialog>
-      <Button variant="contained" onClick={handleClickOpen}>
+      <Button variant="contained"  size="large" className={classes.margin} onClick={handleClickOpen}>
         Register
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -83,9 +88,9 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button type='submit' color="primary">
+          {/* <Button type='submit' color="primary">
             Register
-          </Button>
+          </Button> */}
         </DialogActions>
       </Dialog>
       </Toolbar>
@@ -99,6 +104,7 @@ export const LoginNav = () => {
     const useStyles = makeStyles((theme) => ({
       root: {
         display: 'flex',
+
       },
       appBar: {
         zIndex: theme.zIndex.drawer + 1,

@@ -6,6 +6,7 @@ import { getUser,logout } from './services/userService';
 import NavBar from './components/Navbar/NavBar';
 import HomePage from './pages/HomePage/HomePage';
 import SurfSpotPage from './pages/SurfSpotPage/SurfSpotPage';
+import Footer from './components/Footer/index';
 
 // import { getCurWeatherByLatLon } from './services/world-weather-api';
 
@@ -44,6 +45,9 @@ function App(props) {
 
           </Switch>
         </BrowserRouter>
+        <footer>
+        <Footer />
+      </footer>
         </div>
     );
   };

@@ -1,0 +1,13 @@
+.SignupForm {
+     background-image:  url(../../img/jeremy-bishop-iftBhUFfecE-unsplash.jpg);
+     background-position: center;
+     background-repeat: no-repeat;
+}
+
+img {
+    background-image: cover;
+}
+
+.form-horizontal {
+    font-size: medium;
+}

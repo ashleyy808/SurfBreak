@@ -8,12 +8,10 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
-import Avatar from '@material-ui/core/Avatar';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import Card from '@material-ui/core/Card';
-//import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -31,13 +29,13 @@ const SurfSpot = ({coordinates}) => {
 //     lon: null,
 // });
 const [tempData, setTempData] = useState({});
-const [state,setState] = useState(null);
+// const [state,setState] = useState(null);
 
 
 
 
 async function getAppData () {
-const url =  BASE_URL
+const url = BASE_URL
 await fetch(url).then((response)=> response.json())
   .then((data)=> {
     console.log(data.data.weather[0])
@@ -124,6 +122,9 @@ const handleExpandClick = () => {
   <Typography variant="body2" color="textSecondary" component="p">
     Review
   </Typography>
+  <IconButton aria-label="add to favorite surf spots">
+          <FavoriteIcon />
+  </IconButton>
     <IconButton
     className={clsx(classes.expand, {
         [classes.expandOpen]: expanded,
@@ -152,33 +153,28 @@ export const ReviewForm =({}) => {
     <div>
       <header className="header-footer">Write a Review</header>
       <form className="form-horizontal" 
-      // onSubmit={handleRegister} 
       >
         <div className="form-group">
           <div className="col-lg-12">
             <input type="text" className="form-control" placeholder="Quality and Consistency"  name="qualityAndConsistency" 
-            // onChange={handleChange} 
             />
           </div>
         </div>
         <div className="form-group">
           <div className="col-lg-12">
             <input type="text" className="form-control" placeholder="Difficulty Level" name="difficultyLevel" 
-            // onChange={handleChange} 
             />
           </div>
         </div>
         <div className="form-group">
           <div className="col-lg-12">
             <input type="text" className="form-control" placeholder="Crowds"  name="crowds" 
-            // onChange={handleChange} 
             />
           </div>
         </div>
         <div className="form-group">
           <div className="col-lg-12">
             <input type="text" className="form-control" placeholder="Comment"  name="Comment" 
-            // onChange={handleChange} 
             />
           </div>
         </div>
