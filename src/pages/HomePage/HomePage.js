@@ -1,6 +1,6 @@
 //export default Map
 //import Map from '../../components/Map/Map'; 
-
+import './HomePage.css'; 
 
 
 function HomePage(props) {

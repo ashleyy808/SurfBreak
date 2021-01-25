@@ -28,6 +28,7 @@ const NavBar = (props) => {
     async function handleRegister (e) {
       e.preventDefault();
       try {
+        console.log('testing');
         await signup(registerState);
         // Let <App> know a user has signed up!
         props.handleSignuporLogin();
@@ -70,14 +71,16 @@ const NavBar = (props) => {
 
     return(
       <>
-      {localStorage.getItem('token')?  (<LogoutNav 
+      {localStorage.getItem('token')? 
+      (<LoginNav/>) 
+
+      :
+      (<LogoutNav 
         handleLoginChange = {handleLoginChange}
         handleRegisterChange = {handleRegisterChange}
         handleLogin = {handleLogin}
         handleRegister = {handleRegister}
       />)
-      
-      :(<LoginNav/>)
      } 
       </>
     );

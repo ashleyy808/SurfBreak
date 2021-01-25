@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 const SignupForm =({handleRegister,handleChange}) => {
 
@@ -27,7 +28,9 @@ const SignupForm =({handleRegister,handleChange}) => {
               <input type="password" className="form-control" placeholder="Confirm Password"  name="passwordConf" onChange={handleChange} />
             </div>
           </div>
-          
+          <Button type='submit' color="primary">
+            Register
+          </Button>
         </form>
       </div>
     );

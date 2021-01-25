@@ -7,17 +7,20 @@ import Dialog from '@material-ui/core/Dialog';
 import Drawer from '@material-ui/core/Drawer';
 import Toolbar from '@material-ui/core/Toolbar';
 import SurfSpot from '../../components/SurfSpot/SurfSpot'
+import './SurfSpotPage.css';
 
 
 const SurfSpotPage = () => {
-    const drawerWidth = 240;
+    const drawerWidth = 260;
 
     const useStyles = makeStyles((theme)=>({
         root:{
-            display:"flex"
+            display:"flex",
+            width: '100%',
+            backgroundColor: theme.palette.background.paper,
         },
         content:{
-            margin: "64px 0px 0px 240px"
+            margin: "64px 0px 0px 260px"
         },
           drawer: {
             width: drawerWidth,
@@ -30,6 +33,7 @@ const SurfSpotPage = () => {
             overflow: 'auto',
           },
     }));
+    
     const classes = useStyles();
     
     const [open, setOpen] = useState(false)
@@ -67,7 +71,7 @@ const SurfSpotPage = () => {
                 </ListItem>
                 )})}
         </List>
-        ) :<h3>NO BEACHES FOR THIS STATE</h3>   }
+        ) :<h3>NO SURF SPOTS CURRENTLY SELECTED</h3>   }
     
     const beachCoordinates = {
         'Yakutat' : ['59.66','-140.69'], 'Maalaea Bay (Maui)': ['20.76','-156.49'], 'Punalau Beach (Maui)': ['21.02', '-156.49'], 'Hanalei Bay(Kauai)': ['22.2','-159.5'],
@@ -77,6 +81,8 @@ const SurfSpotPage = () => {
         'Kitty Hawk':['36.07','-75.71'], 'Assateague Island': ['37.91','-75.35'], 'Virgnia Beach': ['36.76','-76.04'], 'Ocean City':['39.25','-74.60'], 'Montauk Point':['41.07','-71.85'],
         'Ruggles (Newport)': ['41.46','-71.29'], 'Hampton Beach': ['42.91','-70.80'], 'Long Sands(York)': ['43.16','-70.61']
     }
+
+   
     const coordinatesToReturn = (beach) => {return(beachCoordinates[beach])} //add cehcking for when beach not in beachcoords (reference line 55)
 
     return(
@@ -109,5 +115,6 @@ const SurfSpotPage = () => {
         </div>
     )
 } 
+
 
 export default SurfSpotPage;

@@ -1,8 +1,9 @@
 import { setToken, getUserFromToken, removeToken } from './tokenService'; 
 
-const BASE_URL = 'http://localhost:3001/api/users/';
+const BASE_URL = 'http://localhost:5000/api/users/';
 
 function signup(user) {
+  console.log(user);
   return fetch(BASE_URL + 'signup', {
     method: 'POST',
     headers: new Headers({'Content-Type': 'application/json'}),

@@ -21,7 +21,21 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 
 export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRegisterChange}) => {
-  const [open, setOpen] = React.useState(false);
+ 
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+    },
+    appBar: {
+      zIndex: theme.zIndex.drawer + 1,
+    },
+    title:{
+      flexGrow: 1
+    }
+  }));
+  
+    const classes = useStyles();
+     const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -32,8 +46,15 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
   };
 
   return (
-    <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+    <div className={classes.root}>
+    <CssBaseline />
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" noWrap className={classes.title}>
+            Surf Break
+          </Typography>
+
+      <Button variant="contained" onClick={handleClickOpen}>
         Login 
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -45,12 +66,12 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button type='submit' color="primary">
+          <Button type='submit' color="secondary">
             Login
           </Button>
         </DialogActions>
       </Dialog>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button variant="contained" onClick={handleClickOpen}>
         Register
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -67,6 +88,8 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
           </Button>
         </DialogActions>
       </Dialog>
+      </Toolbar>
+          </AppBar>
     </div>
   );
 }
@@ -82,7 +105,6 @@ export const LoginNav = () => {
       },
     }));
     
-
       const classes = useStyles();
     
       return (
