@@ -11,13 +11,13 @@ import logo from '../../img/louis-hansel-shotsoflouis-93C4ZkOB-3I-unsplash.jpg';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 445,
+    maxWidth: 450,
     card: {
       width: "40vw",
       // align:"center"
   }, 
   media: {
-    height: 100,
+    height: 90,
   },
  
   },
@@ -32,7 +32,7 @@ export default function ImgMediaCard() {
         <CardMedia className={classes.media}
           component="img"
           image={logo}
-          height="440"
+          height="420"
           title="SurfBreak"
         />
         <CardContent>

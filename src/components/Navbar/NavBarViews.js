@@ -108,7 +108,7 @@ export const LoginNav = ({handleLogout}) => {
           <CssBaseline />
           <AppBar position="fixed" className={classes.appBar}>
             <Toolbar>
-              <Typography variant="h6" noWrap>
+              <Typography variant="h6" color= 'blue' noWrap>
                 Surf Break
               </Typography>
               <Button variant="contained"  size="large" className={classes.margin}   onClick={handleLogout}>

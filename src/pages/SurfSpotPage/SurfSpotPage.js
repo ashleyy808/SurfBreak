@@ -17,7 +17,11 @@ const SurfSpotPage = () => {
         root:{
             display:"flex",
             width: '100%',
-            backgroundColor: theme.palette.background.paper,
+            textField: {
+              width: 300,
+              margin: 100,
+            }
+            // backgroundColor: theme.palette.background.paper,
         },
         content:{
             margin: "80px 0px 0px 290px"

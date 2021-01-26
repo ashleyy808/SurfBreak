@@ -22,7 +22,7 @@ const SurfSpot = ({coordinates}) => {
 const [tempData, setTempData] = useState({});
 
 async function getAppData () {
-const url = 
+const url =;
 await fetch(url).then((response)=> response.json())
   .then((data)=> {
     console.log(data.data.weather[0])
@@ -83,7 +83,7 @@ const handleExpandClick = () => {
     />
     <CardContent>
     <Typography gutterBottom variant="h5" component="h2">
-        Beach Name
+        Surf Spot Weather and Marine Conditions
     </Typography>
     <Grid container spacing={3}>
       <Grid item >

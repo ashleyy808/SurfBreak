@@ -3,10 +3,14 @@
   justify-content: center;
   margin: 0 0 20px;
   color: aliceblue;
+  background-color: blue;
+    color: blue;
 }
 
 .NavBar-link {
   margin: 0 10px;
+  background-color: blue;
+    color: blue;
 }
 
 
