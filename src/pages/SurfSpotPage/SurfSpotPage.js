@@ -13,7 +13,6 @@ import './SurfSpotPage.css';
 
 const SurfSpotPage = () => {
     const drawerWidth = 240;
-
     const useStyles = makeStyles((theme)=>({
         root:{
             display:"flex",
@@ -25,7 +24,7 @@ const SurfSpotPage = () => {
             // backgroundColor: theme.palette.background.paper,
         },
         content:{
-            margin: "80px 0px 0px 290px"
+            margin: "80px 0px 0px 290px",
         },
           drawer: {
             width: drawerWidth,

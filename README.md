@@ -39,7 +39,7 @@ https://trello.com/b/3wLWanKO/surf-break-project
 
 # Getting Started
 
-
+http://localhost:3000/
 
 # Project Issues 
 
