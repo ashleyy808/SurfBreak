@@ -23,6 +23,10 @@ This Mern Stack Surf Forecast application is for users to see general weather in
 
 <img width="837" alt="ERD" src="https://user-images.githubusercontent.com/70113941/105902050-1ee24d00-5fec-11eb-9f7a-2d1dc7560f5f.png">
 
+# Trello Board
+
+https://trello.com/b/3wLWanKO/surf-break-project
+
 ## Technologies
 -HTML5
 -CSS3

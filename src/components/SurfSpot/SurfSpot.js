@@ -15,6 +15,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import './SurfSpot.css'; 
+import API_KEY from '../WorldWeatherApi';
+
 
 
 const SurfSpot = ({coordinates}) => {
@@ -22,7 +24,11 @@ const SurfSpot = ({coordinates}) => {
 const [tempData, setTempData] = useState({});
 
 async function getAppData () {
-const url =;
+  const l = coordinates[0].toString();
+  const la = coordinates[1].toString();
+  const q = l + ',' + la;
+  const key = API_KEY;
+  const url =  key + q;
 await fetch(url).then((response)=> response.json())
   .then((data)=> {
     console.log(data.data.weather[0])
@@ -46,6 +52,8 @@ await fetch(url).then((response)=> response.json())
 
  useEffect(()=>{
   getAppData();  
+  console.log(coordinates[0]);
+  console.log(coordinates[1]);
 }, [coordinates]);
 
   const useStyles = makeStyles((theme)=>({

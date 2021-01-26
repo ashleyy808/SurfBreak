@@ -10,6 +10,7 @@ import SurfSpot from '../../components/SurfSpot/SurfSpot'
 import './SurfSpotPage.css';
 
 
+
 const SurfSpotPage = () => {
     const drawerWidth = 240;
 
