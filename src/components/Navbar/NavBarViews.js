@@ -20,7 +20,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
 
-export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRegisterChange}) => {
+
+export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRegisterChange,
+  handleLoginState,handleCloseLogin,handleClickOpen,handleOpenLogin,handleClose,open,openLogin}) => {
  
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,16 +42,7 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
   
   
     const classes = useStyles();
-     const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
+    
   return (
     <div className={classes.root}>
     <CssBaseline />
@@ -59,21 +52,15 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
             Surf Break
           </Typography>
 
-      <Button variant="contained" size="large" onClick={handleClickOpen}>
+      <Button variant="contained" size="large" onClick={handleOpenLogin}>
         Login 
       </Button>
-      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+      <Dialog open={openLogin} onClose={handleCloseLogin} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Login</DialogTitle>
         <DialogContent>
-         <LoginPage handleChange={handleLoginChange} handleLogin={handleLogin}/>
+         <LoginPage handleChange={handleLoginChange} handleSubmit={handleLogin} handleFormState={handleLoginState}/>
         </DialogContent>
         <DialogActions>
-          {/* <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button> */}
-          <Button type='submit' color="secondary">
-            Login
-          </Button>
         </DialogActions>
       </Dialog>
       <Button variant="contained"  size="large" className={classes.margin} onClick={handleClickOpen}>
@@ -88,9 +75,6 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          {/* <Button type='submit' color="primary">
-            Register
-          </Button> */}
         </DialogActions>
       </Dialog>
       </Toolbar>
@@ -99,7 +83,7 @@ export const LogoutNav = ({handleLogin,handleRegister,handleLoginChange,handleRe
   );
 }
 
-export const LoginNav = () => {
+export const LoginNav = ({handleLogout}) => {
        
     const useStyles = makeStyles((theme) => ({
       root: {
@@ -108,6 +92,12 @@ export const LoginNav = () => {
       },
       appBar: {
         zIndex: theme.zIndex.drawer + 1,
+      },
+      title:{
+        flexGrow: 1
+      },
+      margin: {
+        margin: theme.spacing(2),
       },
     }));
     
@@ -121,6 +111,9 @@ export const LoginNav = () => {
               <Typography variant="h6" noWrap>
                 Surf Break
               </Typography>
+              <Button variant="contained"  size="large" className={classes.margin}   onClick={handleLogout}>
+                  Logout
+              </Button>
             </Toolbar>
           </AppBar>
         </div>

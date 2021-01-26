@@ -1,12 +1,5 @@
 .HomePage {
-    /* background-image:  url(../../img/jeremy-bishop-iftBhUFfecE-unsplash.jpg); */
-    background-position: center;
+    background-image: cover;
     background-repeat: no-repeat;
-    background-color:aqua;
   }
 
-  /* .id {
-      background-size: cover;
-      background-image:  url(../../img/jeremy-bishop-iftBhUFfecE-unsplash.jpg);
-      background-position: center;
-  } */

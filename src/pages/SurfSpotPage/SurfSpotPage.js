@@ -11,7 +11,7 @@ import './SurfSpotPage.css';
 
 
 const SurfSpotPage = () => {
-    const drawerWidth = 260;
+    const drawerWidth = 240;
 
     const useStyles = makeStyles((theme)=>({
         root:{
@@ -20,7 +20,7 @@ const SurfSpotPage = () => {
             backgroundColor: theme.palette.background.paper,
         },
         content:{
-            margin: "64px 0px 0px 260px"
+            margin: "80px 0px 0px 290px"
         },
           drawer: {
             width: drawerWidth,
@@ -108,7 +108,7 @@ const SurfSpotPage = () => {
           </Drawer>
         <div className={classes.content}>
             {beachList(stateName)}
-            <Dialog onClose={handleClose} aria-labelledby="beach" open={open}>
+            <Dialog onClose={handleClose} aria-labelledby="beach" open={open} scroll="paper">
                 <SurfSpot coordinates={coordinatesToReturn(beach)}/>
             </Dialog>
         </div>

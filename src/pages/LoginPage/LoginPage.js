@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-
+import Button from '@material-ui/core/Button';
   
-const LoginPage=({handleChange, handleSubmit}) => {
+const LoginPage=({handleChange, handleSubmit, handleLoginState}) => {
   return (
     <div className="LoginPage">
       <header className="header-footer">Log In</header>
@@ -14,7 +13,7 @@ const LoginPage=({handleChange, handleSubmit}) => {
               type="email"
               className="form-control"
               placeholder="Email"
-              // value={formState.email}
+              value={handleLoginState}
               name="email"
               onChange={handleChange}
             />
@@ -26,13 +25,17 @@ const LoginPage=({handleChange, handleSubmit}) => {
               type="password"
               className="form-control"
               placeholder="Password"
-              // value={formState.password}
+              value={handleLoginState}
               name="password"
               onChange={handleChange}
             />
           </div>
         </div>
-      </form>
+      <Button type='submit' color="secondary">
+            Login
+          </Button>
+                </form>
+
     </div>
   );
 }

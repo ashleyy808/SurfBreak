@@ -1,5 +1,8 @@
 .Footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    background: rgb(41, 41, 41);
+    padding: 2%;
+    text-align: left;
+    bottom:0%;
 }

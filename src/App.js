@@ -1,14 +1,13 @@
 
-import React, { useEffect,useState } from 'react';
+import React from 'react';
 import './App.css';
 import { Route, Redirect, BrowserRouter, Switch} from 'react-router-dom';
-import { getUser,logout } from './services/userService';
+
 import NavBar from './components/Navbar/NavBar';
 import HomePage from './pages/HomePage/HomePage';
 import SurfSpotPage from './pages/SurfSpotPage/SurfSpotPage';
 import Footer from './components/Footer/index';
-
-// import { getCurWeatherByLatLon } from './services/world-weather-api';
+import nattu from './img/nattu.jpg';
 
 
 
@@ -34,15 +33,18 @@ function App(props) {
 
     return (
         <div className="App">
+          <div className="background-image">
+            <img src={nattu} alt=""nattu />
+          </div>
           <BrowserRouter>
           <NavBar />
           <Switch>
-          {localStorage.getItem('token') ?
-            <Route exact path="/" component={SurfSpotPage}/>
-            : <Route exact path="/" component={HomePage} />
-          }
+         
+            <PrivateRoute exact path="/SurfSpotPage" component={SurfSpotPage}/>
+             <Route exact path="/" component={HomePage} />
+          
             <Redirect from="*" to="/" />
-
+            
           </Switch>
         </BrowserRouter>
         <footer>

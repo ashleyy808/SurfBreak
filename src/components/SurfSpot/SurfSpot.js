@@ -23,19 +23,13 @@ import './SurfSpot.css';
 
 
 
+
 const SurfSpot = ({coordinates}) => {
-//   const [weatherData, setWeatherData] = useState({
-//     lat: null,
-//     lon: null,
-// });
+
 const [tempData, setTempData] = useState({});
-// const [state,setState] = useState(null);
-
-
-
 
 async function getAppData () {
-const url = BASE_URL
+const url = 
 await fetch(url).then((response)=> response.json())
   .then((data)=> {
     console.log(data.data.weather[0])
@@ -44,34 +38,29 @@ await fetch(url).then((response)=> response.json())
         maxTempF: data.data.weather[0].maxtempF,
         minTempF: data.data.weather[0].mintempF,
         waterTemp_F: data.data.weather[0].hourly[0].waterTemp_F,
-        tide: null,
-        windspeedMiles: null,
-        WindChillF: null,
-        swellHeight_ft: null,
-        swellDir: null,
-        swellPeriod_secs: null,
-        icon: ''
+        tide: data.data.weather[0].tides[0].tide_data[0].tideHeight_mt,
+        tide_type: data.data.weather[0].tides[0].tide_data[0].tide_type,
+        windspeedMiles: data.data.weather[0].hourly[0].windspeedMiles,
+        WindChillF: data.data.weather[0].hourly[0].WindChillF,
+        swellHeight_ft: data.data.weather[0].hourly[0].swellHeight_ft,
+        swellDir: data.data.weather[0].hourly[0].swellDir,
+        swellPeriod_secs: data.data.weather[0].hourly[0].swellPeriod_secs,
       } 
-    // console.log(weather)
     setTempData(weather)
   });
 }
 
 
  useEffect(()=>{
-  getAppData();
-
-  //api call to grab the beach info
-  //and then put in a setstate that'll be used for display
-  
+  getAppData();  
 }, [coordinates]);
 
   const useStyles = makeStyles((theme)=>({
     card: {
-        width: "40vw"
+        width: "60vw"
     }, 
     media: {
-      height: 150,
+      height: 20,
     },
     expand: {
         transform: 'rotate(0deg)',
@@ -98,25 +87,39 @@ const handleExpandClick = () => {
     <CardMedia
     className={classes.media}
     image={classes}
-    // image="https://cdn.shopify.com/s/files/1/1061/1924/products/Crying_Emoji_Icon_2_grande.png?v=1571606091"
-    title="CRY"
     />
     <CardContent>
     <Typography gutterBottom variant="h5" component="h2">
         Beach Name
     </Typography>
+    <Grid container spacing={3}>
+      <Grid item >
         <List dense>
         {Object.keys(tempData).map((item, index)=>{
           const line = item + ": " +tempData[item]
-          return(
+          if (index < 5) { return ( 
           <ListItem key={index}>
             <ListItemText
               primary={line}
             />
-          </ListItem>)}
+          </ListItem>)}}
         )}
       </List>
-
+      </Grid>
+      <Grid item >
+      <List dense>
+        {Object.keys(tempData).map((item, index)=>{
+          const line = item + ": " +tempData[item]
+          if (index >= 5) { return(
+          <ListItem key={index}>
+            <ListItemText
+              primary={line}
+            />
+          </ListItem>)}}
+        )}
+      </List>
+      </Grid>
+      </Grid>
     </CardContent>
   <CardActions>
   <Typography variant="body2" color="textSecondary" component="p">
@@ -155,25 +158,25 @@ export const ReviewForm =({}) => {
       <form className="form-horizontal" 
       >
         <div className="form-group">
-          <div className="col-lg-12">
+          <div className="col-md-12">
             <input type="text" className="form-control" placeholder="Quality and Consistency"  name="qualityAndConsistency" 
             />
           </div>
         </div>
         <div className="form-group">
-          <div className="col-lg-12">
+          <div className="col-md-12">
             <input type="text" className="form-control" placeholder="Difficulty Level" name="difficultyLevel" 
             />
           </div>
         </div>
         <div className="form-group">
-          <div className="col-lg-12">
+          <div className="col-md-12">
             <input type="text" className="form-control" placeholder="Crowds"  name="crowds" 
             />
           </div>
         </div>
         <div className="form-group">
-          <div className="col-lg-12">
+          <div className="col-md-12">
             <input type="text" className="form-control" placeholder="Comment"  name="Comment" 
             />
           </div>
