@@ -1,6 +1,6 @@
 import { setToken, getUserFromToken, removeToken } from './tokenService'; 
 
-const BASE_URL = 'http://localhost:5000/api/users/';
+const BASE_URL = 'https://surf-spot-backend.herokuapp.com//api/users/';
 
 function signup(user) {
   console.log(user);
