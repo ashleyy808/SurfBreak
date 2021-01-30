@@ -1,9 +1,6 @@
-//import logo from '../../img/jeremy-bishop-iftBhUFfecE-unsplash.jpg';
 import './HomePage.css';
-import React, { Component } from "react";
-// src/pages/HomePage/HomePageView.js
+import React from "react";
 import HomePageView from './HomePageView';
-// import { render } from '@testing-library/react';
 import background from '../../img/nattu.jpg';
 
 

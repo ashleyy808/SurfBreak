@@ -8,7 +8,7 @@ const SignupForm =({handleRegister,handleChange}) => {
     return (
       <div>
         <header className="header-footer">Have a Surf Break</header>
-        <img id="container" src={logo} width="175" height="100"/>
+        <img id="container" src={logo} alt='logo' width="175" height="100"/>
         <br></br>
         <form className="form-horizontal" onSubmit={handleRegister} >
           <div className="form-group">

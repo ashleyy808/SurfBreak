@@ -52,9 +52,9 @@ const NavBar = (props) => {
       }
     }
 
-    function isFormInvalid() {
-      return !(registerState.name && registerState.email && registerState.password === registerState.passwordConf);
-    }
+    // function isFormInvalid() {
+    //   return !(registerState.name && registerState.email && registerState.password === registerState.passwordConf);
+    // }
   
   const handleLoginChange =(e) => {
     setLoginState(prevState => ({

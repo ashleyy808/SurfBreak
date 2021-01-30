@@ -23,34 +23,35 @@ const SurfSpot = ({coordinates}) => {
 
 const [tempData, setTempData] = useState({});
 
-async function getAppData () {
-  const l = coordinates[0].toString();
-  const la = coordinates[1].toString();
-  const q = l + ',' + la;
-  const key = API_KEY;
-  const url =  key + q;
-await fetch(url).then((response)=> response.json())
-  .then((data)=> {
-    console.log(data.data.weather[0])
-    const weather = 
-      { 
-        maxTempF: data.data.weather[0].maxtempF,
-        minTempF: data.data.weather[0].mintempF,
-        waterTemp_F: data.data.weather[0].hourly[0].waterTemp_F,
-        tide: data.data.weather[0].tides[0].tide_data[0].tideHeight_mt,
-        tide_type: data.data.weather[0].tides[0].tide_data[0].tide_type,
-        windspeedMiles: data.data.weather[0].hourly[0].windspeedMiles,
-        WindChillF: data.data.weather[0].hourly[0].WindChillF,
-        swellHeight_ft: data.data.weather[0].hourly[0].swellHeight_ft,
-        swellDir: data.data.weather[0].hourly[0].swellDir,
-        swellPeriod_secs: data.data.weather[0].hourly[0].swellPeriod_secs,
-      } 
-    setTempData(weather)
-  });
-}
 
 
  useEffect(()=>{
+  async function getAppData () {
+    const l = coordinates[0].toString();
+    const la = coordinates[1].toString();
+    const q = l + ',' + la;
+    const key = API_KEY;
+    const url =  key + q;
+  await fetch(url).then((response)=> response.json())
+    .then((data)=> {
+      console.log(data.data.weather[0])
+      const weather = 
+        { 
+          maxTempF: data.data.weather[0].maxtempF,
+          minTempF: data.data.weather[0].mintempF,
+          waterTemp_F: data.data.weather[0].hourly[0].waterTemp_F,
+          tide: data.data.weather[0].tides[0].tide_data[0].tideHeight_mt,
+          tide_type: data.data.weather[0].tides[0].tide_data[0].tide_type,
+          windspeedMiles: data.data.weather[0].hourly[0].windspeedMiles,
+          WindChillF: data.data.weather[0].hourly[0].WindChillF,
+          swellHeight_ft: data.data.weather[0].hourly[0].swellHeight_ft,
+          swellDir: data.data.weather[0].hourly[0].swellDir,
+          swellPeriod_secs: data.data.weather[0].hourly[0].swellPeriod_secs,
+        } 
+      setTempData(weather)
+    });
+  }
+  
   getAppData();  
   console.log(coordinates[0]);
   console.log(coordinates[1]);
@@ -103,7 +104,9 @@ const handleExpandClick = () => {
             <ListItemText
               primary={line}
             />
-          </ListItem>)}}
+          </ListItem>)} else {
+            return null
+          }}
         )}
       </List>
       </Grid>
@@ -116,7 +119,9 @@ const handleExpandClick = () => {
             <ListItemText
               primary={line}
             />
-          </ListItem>)}}
+          </ListItem>)} else {
+            return null
+          }}
         )}
       </List>
       </Grid>
@@ -151,7 +156,7 @@ const handleExpandClick = () => {
 export default SurfSpot;
 
 // Review Form for Surf Spots
-export const ReviewForm =({}) => {
+export const ReviewForm =() => {
 
   return (
     <div>
